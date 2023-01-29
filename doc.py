@@ -46,7 +46,7 @@ def mustart():
 	if i == 0:
 		mixer.init()
 		mixer.music.load(root.filename)
-		mixer.music.play()
+		mixer.music.play(-1)
 		i = 1
 	else:
 		mixer.music.unpause()
@@ -62,13 +62,13 @@ def musquit():
 		mixer.stop()
 		mixer.init()
 		mixer.music.load(root.filename)
-		mixer.music.play()
+		mixer.music.play(-1)
 		i = 1
 		filechanged = 0
 	else:
 		mixer.init()
 		mixer.music.load(root.filename)
-		mixer.music.play()
+		mixer.music.play(-1)
 		i=1
 		filechanged=0
 stop = Button(root, image=icon2, command=mustop).grid(row=3, column=0)
