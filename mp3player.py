@@ -5,7 +5,6 @@ from tkinter import *
 from PIL import ImageTk, Image
 from tkinter import filedialog
 from tkinter import messagebox
-# import sqlite3
 i = 0
 root = Tk()
 root.title('mp3player')
@@ -15,40 +14,26 @@ icon2 = ImageTk.PhotoImage(Image.open("icon2.png"))
 icon3 = ImageTk.PhotoImage(Image.open("icon3.png"))
 icon4 = ImageTk.PhotoImage(Image.open("icon4.png"))
 file = ImageTk.PhotoImage(Image.open("file.png"))
-# def popup():
-#       response = messagebox.askquestion("popup","kys kys kys kys kys kys kys kys kys kys ")
-#       if response == 'yes':
-#               t = Label(root, text=response).pack()
-#       else:
-#               t = Label(root, text='You idiot why did you click no').pack()
 rights = messagebox.askokcancel("rights","this app was made for my learning")
 if rights != 1:
         root.destroy()
         exit()
 root.filename = filedialog.askopenfilename(initialdir="~/Documents", title='choose file', filetypes=(('music', '*.mp3'),))
-# button = Button(text='pop up!', command=popup).pack()
 filechanged = 0
 filename = root.filename
-
-
 def choose():
         global filename
         global filechanged
-        root.filename = filedialog.askopenfilename(
-            initialdir="~/Documents", title='choose file', filetypes=(('music', '*.mp3'),))
+        root.filename = filedialog.askopenfilename(initialdir="~/Documents", title='choose file', filetypes=(('music', '*.mp3'),))
         filechanged = 1
         filename = root.filename
 change = Button(root, image=file, command=choose).grid(row=0, column=0)
-# abel = Label(text=root.filename).pack()
 paused = 0
-
-stop = 0
 def mustart():
         global filename
         global paused
         global filechanged
         global i
-        global stop
         if filename:
                 if filechanged == 1:
                         i=0
