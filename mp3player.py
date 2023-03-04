@@ -9,11 +9,13 @@ i = 0
 root = Tk()
 root.title('mp3player')
 root.geometry("325x125")
+backgroundc = ImageTk.PhotoImage(Image.open("background.png"))
 icon1 = ImageTk.PhotoImage(Image.open("icon1.png"))
 icon2 = ImageTk.PhotoImage(Image.open("icon2.png"))
 icon3 = ImageTk.PhotoImage(Image.open("icon3.png"))
 icon4 = ImageTk.PhotoImage(Image.open("icon4.png"))
 file = ImageTk.PhotoImage(Image.open("file.png"))
+background = Label(root, image = backgroundc).place(x=0,y=0)
 rights = messagebox.askokcancel("rights","this app was made for my learning")
 if rights != 1:
         root.destroy()
@@ -27,7 +29,7 @@ def choose():
         root.filename = filedialog.askopenfilename(initialdir="~/Documents", title='choose file', filetypes=(('music', '*.mp3'),))
         filechanged = 1
         filename = root.filename
-change = Button(root, image=file, command=choose).grid(row=0, column=0)
+change = Button(root, image=file, bg = '#000000', command=choose).grid(row=0, column=0)
 paused = 0
 def mustart():
         global filename
@@ -47,18 +49,18 @@ def mustart():
                         mixer.music.play(-1)
                         i = 1
                         paused=0
-                        start = Button(root, image=icon2, command=mustart).grid(row=0, column=1)
+                        start = Button(root, image=icon2, bg = '#000000', command=mustart).grid(row=0, column=1)
                 elif i != 0 and paused == 0:
                         mixer.music.pause()
                         paused=1
-                        start = Button(root, image=icon1, command=mustart).grid(row=0, column=1)
+                        start = Button(root, image=icon1, bg = '#000000', command=mustart).grid(row=0, column=1)
                 elif i != 0 and paused != 0:
                         mixer.music.unpause()
                         paused=0
-                        start = Button(root, image=icon2, command=mustart).grid(row=0, column=1)
+                        start = Button(root, image=icon2, bg = '#000000', command=mustart).grid(row=0, column=1)
         else:
                 response = messagebox.showwarning("error", "please choose a file")
-start = Button(root, image=icon1, command=mustart).grid(row=0, column=1)
+start = Button(root, image=icon1, bg = '#000000', command=mustart).grid(row=0, column=1)
 def musquit():
         global filename
         global paused
@@ -71,9 +73,9 @@ def musquit():
                         i = 0
                         filechanged = 1
                         paused=1
-                        start = Button(root, image=icon1, command=mustart).grid(row=0, column=1)
+                        start = Button(root, image=icon1, bg = '#000000', command=mustart).grid(row=0, column=1)
         else:
                 response = messagebox.showwarning("error","please choose a file")
-quit = Button(root, image=icon3,command=musquit).grid(row=1, column=1)
-bum = Button(root, image=icon4, command=root.destroy).grid(row=0, column=2)
+quit = Button(root, image=icon3, bg = '#000000', command=musquit).grid(row=1, column=1)
+bum = Button(root, image=icon4, bg = '#000000', command=root.destroy).grid(row=0, column=2)
 root.mainloop()
