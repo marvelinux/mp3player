@@ -8,4 +8,4 @@ $ cd mp3player
 $ python3 -m pip install -r requirements.txt
 
 # special thanks
-i used <a href="https://www.pygame.org">pygame</a> and <a herf="https://github.com/python-pillow/Pillow">Pillow</a> for coding and for compiling to exe i used <a href="https://pyinstaller.org">pyinstaller</a>, icon is from deviantart by <a href="https://www.deviantart.com/stichnw/art/Media-Player-ICO-186583999">stichnw</a>
+i used <a href="https://www.pygame.org">pygame</a> and <a href="https://www.github.com/python-pillow/Pillow">Pillow</a> for coding and for compiling to exe i used <a href="https://pyinstaller.org">pyinstaller</a>, icon is from deviantart by <a href="https://www.deviantart.com/stichnw/art/Media-Player-ICO-186583999">stichnw</a>
