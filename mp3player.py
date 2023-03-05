@@ -78,6 +78,9 @@ def musquit():
                         start = Button(root, image=icon1, bg = '#000000', command=mustart).grid(row=0, column=1)
         else:
                 response = messagebox.showwarning("error","please choose a file")
-quit = Button(root, image=icon3, bg = '#000000', command=musquit).grid(row=1, column=1)
-bum = Button(root, image=icon4, bg = '#000000', command=root.destroy).grid(row=0, column=2)
+restart = Button(root, image=icon3, bg = '#000000', command=musquit).grid(row=1, column=1)
+def stopp():
+        root.destroy()
+        mixer.quit()
+bum = Button(root, image=icon4, bg = '#000000', command=stopp).grid(row=0, column=2)
 root.mainloop()
