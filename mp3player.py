@@ -15,6 +15,8 @@ icon2 = ImageTk.PhotoImage(Image.open("icon2.png"))
 icon3 = ImageTk.PhotoImage(Image.open("icon3.png"))
 icon4 = ImageTk.PhotoImage(Image.open("icon4.png"))
 file = ImageTk.PhotoImage(Image.open("file.png"))
+icon = ImageTk.PhotoImage(Image.open("mediaplayer.ico"))
+root.iconphoto(True, icon)
 background = Label(root, image = backgroundc).place(x=0,y=0)
 rights = messagebox.askokcancel("rights","this app was made for my learning")
 if rights != 1:
